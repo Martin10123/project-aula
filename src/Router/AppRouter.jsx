@@ -1,3 +1,5 @@
+import { LoginPage } from "../auth";
+
 export const AppRouter = () => {
-  return <div>AppRouter</div>;
+  return <LoginPage />;
 };
