@@ -14,12 +14,17 @@ export const regex =
 
 const validateName = (name) => {
   let regEx = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/;
-  if (name.match(regEx) && name.length > 0) {
+  if (name.match(regEx) && name.length > 3) {
     return true;
   } else {
     return false;
   }
 };
+
+function validatePhone(number) {
+  let regex = /^3\d{9}$/;
+  return regex.test(number) && number.length === 10;
+}
 
 const validatePassword = (password) => {
   // Debe tener al menos 8 caracteres
@@ -65,7 +70,7 @@ export const ValidatorRegister = {
   ],
   password2: [(p1, p2) => p1 !== p2, "Las contraseñas no coinciden"],
   phoneNumber: [
-    (value) => value.trim().length !== 10 || isNaN(value),
+    (value) => validatePhone(value) === false,
     "Ingrese un número de telefono valido",
   ],
 };

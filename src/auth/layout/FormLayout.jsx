@@ -10,7 +10,11 @@ export const FormLayout = ({ children, title, imageBack, titleRedirect }) => {
       <div className={styles.layout__content}>
         <h1>{title}</h1>
 
-        <form className={styles.layout__form}>{children}</form>
+        {title === "Login" ? (
+          <form className={styles.layout__form}>{children}</form>
+        ) : (
+          <div className={styles.layout__form}>{children}</div>
+        )}
 
         {title === "Login" && (
           <p className={styles.layout__forgot_password}>
