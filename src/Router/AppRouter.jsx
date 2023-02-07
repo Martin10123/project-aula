@@ -1,5 +1,5 @@
-import { RegisterContentContext } from "../auth";
+import { RecoverAccount } from "../auth";
 
 export const AppRouter = () => {
-  return <RegisterContentContext />;
+  return <RecoverAccount />;
 };
