@@ -1,5 +1,5 @@
-import { LoginPage } from "../auth";
+import { RegisterContentContext } from "../auth";
 
 export const AppRouter = () => {
-  return <LoginPage />;
+  return <RegisterContentContext />;
 };
