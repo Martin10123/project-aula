@@ -22,9 +22,11 @@ export const FormLayout = ({ children, title, imageBack, titleRedirect }) => {
           </p>
         )}
 
-        <span className={styles.layout__redirect_register}>
-          ¿Aún no tienes cuenta? <a href="#">{titleRedirect}</a>
-        </span>
+        {!!titleRedirect && (
+          <span className={styles.layout__redirect_register}>
+            ¿Aún no tienes cuenta? <a href="#">{titleRedirect}</a>
+          </span>
+        )}
       </div>
     </div>
   );

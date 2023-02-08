@@ -1,5 +1,5 @@
-import { ProfilePage } from "../auth";
+import { Schedule } from "../appointments";
 
 export const AppRouter = () => {
-  return <ProfilePage />;
+  return <Schedule />;
 };
