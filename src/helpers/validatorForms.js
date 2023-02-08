@@ -12,9 +12,9 @@ export const dateIsValid = (date) => {
 export const regex =
   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-const validateName = (name) => {
+const validateName = (name, max) => {
   let regEx = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/;
-  if (name.match(regEx) && name.length > 3) {
+  if (name.match(regEx) && name.length > max) {
     return true;
   } else {
     return false;
@@ -56,12 +56,12 @@ export const ValidatorRegister = {
     "Debes de ser mayor de edad",
   ],
   displayName: [
-    (value) => validateName(value) === false,
-    "Ingrese su nombre real",
+    (value) => validateName(value, 5) === false,
+    "Ingrese su nombre y su segundo nombre real",
   ],
   lastName: [
-    (value) => validateName(value) === false,
-    "Ingrese su apellido real",
+    (value) => validateName(value, 10) === false,
+    "Ingrese sus apellidos completos",
   ],
   email: [(value) => regex.test(value) === false, "Ingrese un email valido"],
   password1: [

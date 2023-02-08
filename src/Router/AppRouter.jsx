@@ -1,5 +1,5 @@
-import { RecoverAccount } from "../auth";
+import { ProfilePage } from "../auth";
 
 export const AppRouter = () => {
-  return <RecoverAccount />;
+  return <ProfilePage />;
 };
